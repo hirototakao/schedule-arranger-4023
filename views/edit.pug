@@ -21,4 +21,5 @@ block content
   h3.my-3 危険な変更
   form(method="post", action=`/schedules/${schedule.scheduleId}/delete`)
     input(type="hidden" name="_csrf" value!=csrfToken)
-    button.btn.btn-danger(type="submit")#delete-alert この予定を削除する
+    button.btn.btn-danger(type="submit"
+                          data-schedule-id=schedule.scheduleId)#delete-alert この予定を削除する
