@@ -23,3 +23,5 @@ block content
               td #{schedule.formattedUpdatedAt}
               - const memo = schedule.memo.slice(0, 60)
               td #{memo}...
+              if memo === 0
+                td 
