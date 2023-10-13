@@ -19,16 +19,19 @@ router.get('/', async (req, res, next) => {
       where: { createdBy: parseInt(req.user.id) },
       orderBy: { updatedAt: 'desc' }
     });
-    schedules.forEach((schedule) => {
-      schedule.formattedUpdatedAt = dayjs(schedule.updatedAt).tz().format('YYYY/MM/DD HH:mm');
+    schedules.forEach((schedule) =>{
+       schedule.formattedUpdatedAt = dayjs(schedule.updatedAt).format('YYYY/MM/DD HH:mm');
     });
     res.render('index', {
       title: title,
       user: req.user,
-      schedules: schedules
+      schedules: schedules,
     });
   } else {
-    res.render('index', { title: title, user: req.user });
+    res.render('index', { 
+      title: title, 
+      user: req.user, 
+     });
   }
 });
 
