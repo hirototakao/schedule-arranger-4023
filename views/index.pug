@@ -22,6 +22,9 @@ block content
                 a(href=`/schedules/${schedule.scheduleId}`) #{schedule.scheduleName}
               td #{schedule.formattedUpdatedAt}
               - const memo = schedule.memo.slice(0, 60)
-              td #{memo}...
-              if memo === 0
-                td 
+              if memo < 60
+                td #{memo} 
+              if memo > 60 
+                td #{memo}... 
+              if memo === ''
+                td not set 
