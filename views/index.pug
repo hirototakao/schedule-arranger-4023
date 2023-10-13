@@ -22,7 +22,7 @@ block content
                 a(href=`/schedules/${schedule.scheduleId}`) #{schedule.scheduleName}
               td #{schedule.formattedUpdatedAt}
             - const memo = schedule.memo.slice(0, 60)
-            - const moreThan = memo >= 60 
+            - const moreThan = memo > 60 
             - const lessThan = memo <= 60
             if moreThan 
               td #{memo}...
