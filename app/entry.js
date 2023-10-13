@@ -40,10 +40,14 @@ buttonSelfComment.on('click', () => {
       });
   }
 });
-const deleteAlert = $('#delete-alert');
-deleteAlert.on('click', () => {
-   const confirm = confirm('Do you want to delete this schedule seriously?');
+const forms = querySelectorAll('form[method="post"][action=`/schedules/${schedule.scheduleId}/delete`]')
+forms.forEach((form) => {
+form.addEventLIstener('submit', (event) => {
+    event.preventDefault();
+   const confirm = window.confirm('Do you want to delete this schedule seriously?');
    if(confirm) {
-     alert('It was successful deleted!');
+    form.submit();
+    alert('It was successful deleted!');
    }
+});
 });
