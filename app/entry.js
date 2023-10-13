@@ -40,10 +40,9 @@ buttonSelfComment.on('click', () => {
       });
   }
 });
-const forms = querySelectorAll('form[method="post"][action=`/schedules/${schedule.scheduleId}/delete`]')
+const forms = document.querySelectorAll('form[method="post"][action=`/schedules/${schedule.scheduleId}/delete`]')
 forms.forEach((form) => {
-form.addEventLIstener('submit', (event) => {
-    event.preventDefault();
+form.addEventListener('submit', (event) => { 
    const confirm = window.confirm('Do you want to delete this schedule seriously?');
    if(confirm) {
     form.submit();
