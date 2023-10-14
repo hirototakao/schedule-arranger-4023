@@ -40,10 +40,3 @@ buttonSelfComment.on('click', () => {
       });
   }
 });
-const deleteAlert = $('#delete-alert');
-deleteAlert.on('click', () => {
-  const confirm = confirm('Do you want to delete this schedule seriously?');
-  if(confirm){
-    alert('It was successful deleted.');
-  }
-});
