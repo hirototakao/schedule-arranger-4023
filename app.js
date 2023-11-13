@@ -11,8 +11,8 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient({ log: [ 'query' ] });
 
 const GitHubStrategy = require('passport-github2').Strategy;
-const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID || '2483f1cf95d2705f7c99';
-const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET || '705b70fc43258a1461522d3b9a8954595e0da200';
+const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID || 'fc6af7605966817fc1aa';
+const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET || 'aff1c0c9d1bf42a8b9a8c32b1a6af7e08d67d226';
 
 passport.serializeUser((user, done) => done(null, user));
 passport.deserializeUser((obj, done) => done(null, obj));
